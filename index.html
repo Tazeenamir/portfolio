@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Code</title>
+  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+header {
+  
+  background: linear-gradient(to bottom, rgba(7, 55, 74, 0.8), rgba(37, 183, 159, 0.8));
+  height: 100vh;
+}
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background: linear-gradient(to bottom, rgba(7, 55, 74, 0.8), rgba(37, 183, 159, 0.8));
+}
+.menu-items {
+  display: flex;
+}
+.menu-items li {
+  list-style: none;
+  padding: 1rem;
+}
+.menu-items a {
+  text-decoration: none;
+  color: #f0f0e6;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}
+.menu-items a:hover {
+  border-bottom: 2px solid #f0f0e6;
+}
+.navbar .logo {
+  order: 1;
+  color: #f0f0e6;
+  font-size: 2rem;
+}
+.home-content .name {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #07374a;
+  width: 100%;
+  text-align: center;
+  line-height: 2;
+}
+.home-content .name h1 {
+  font-size: 6rem;
+  text-align: center;
+  color:#25b79f;
+  -webkit-text-stroke: 0.3vw  #07374a;
+  text-transform: uppercase
+}
+.home-content .name p {
+  color: #f0f0e6;
+  font-size: 5rem;
+  color:#25b79f;
+  -webkit-text-stroke: 0.3vw  #07374a;
+  text-transform: uppercase;
+  line-height:2;
+}
+.angle-down-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  border: 3px solid #07374a;
+  border-radius: 50%;
+}
+.angle-down-icon a {
+  text-decoration: none;
+  color: #07374a;
+  padding: 1rem;
+}
+
+.about-me {
+  background: linear-gradient(to bottom, rgba(7, 55, 74, 0.8), rgba(37, 183, 159, 0.8));
+  padding: 6rem 0;
+}
+.about-me .about-heading {
+  color: #25b79f;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+.about-content img {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.about-content p {
+  font-size: 1.2rem;
+  color: #f0f0e6;
+  padding: 0 2.3rem;
+  text-align: center;
+}
+.skills .skills-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #25b79f;
+  text-align: center;
+}
+.about-me .about-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-content .left-content {
+  flex-basis: 45%;
+  text-align: center;
+}
+.about-content .right-content {
+  flex-basis: 45%;
+}
+.skills-bar {
+  padding: 25px 30px;
+}
+.skills-bar .bar {
+  margin: 25px 0;
+}
+.skills-bar .bar .info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.skills-bar .bar .info {
+  margin-bottom: 8px;
+  color: #f0f0e6;
+}
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 550px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.bar .progress-line span {
+  position: absolute;
+  background: linear-gradient(to bottom, #07374a, #25b79f);
+  height: 100%;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.progress-line .html {
+  width: 100%;
+}
+.progress-line .css {
+  width: 100%;
+}
+.progress-line .bootstrap {
+  width: 50%;
+}
+.progress-line .javascript {
+  width: 100%;
+}
+.progress-line .c {
+  width: 80%;
+}
+.progress-line .SEO {
+  width: 70%;
+}
+.progress-line .OOP{
+  width: 80%;
+}
+.progress-line .python {
+  width: 80%;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -12px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-style: #f0f0f0;
+  border-top-color: #f0f0f0;
+}
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: #07374a;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f0f0f0;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+.progress-line .html::after {
+  content: "100%";
+}
+.progress-line .css::after {
+  content: "100%";
+}
+.progress-line .bootstrap::after {
+  content: "50%";
+}
+.progress-line .javascript::after {
+  content: "100%";
+}
+.progress-line .c::after {
+  content: "80%";
+}
+.progress-line .SEO::after {
+  content: "70%";
+}
+.progress-line .OOP::after {
+  content: "80%";
+}
+.progress-line .python::after {
+  content: "80%";
+}
+
+.navbar.solid {
+  background-color: #021c27;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px rgb(7 55 74 / 20%);
+  z-index: 500;
+}
+.navbar.solid .navbar-brand {
+  display: inline-block;
+  color: #f0f0e6;
+  transition: color 1s ease 0s;
+}
+.navbar-brand {
+  display: none;
+  color: #f0f0e6;
+  font-weight: 400;
+}
+.work-arrow {
+  margin: 2rem 0;
+}
+.work-arrow a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000000;
+}
+.work-arrow-2 {
+  margin: 2rem 0;
+}
+.work-arrow-2 a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #072b25;
+  display: none;
+}
+.portfolio {
+  background: #25b79f;
+  padding: 2rem 0;
+}
+.proj-heading h1 {
+  text-align: center;
+  color: #07374a;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 3rem 0;
+}
+.more-work {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+.more-work p {
+  font-size: 1.6rem;
+  color: #07374a;
+  font-weight: 500;
+}
+.more-work a {
+  text-decoration: none;
+  color: #f0f0e6;
+  font-size: 1.3rem;
+}
+.more-work a:hover {
+  border-bottom: 2px solid #f0f0e6;
+}
+.portfolio {
+  background: linear-gradient(to bottom, rgba(7, 55, 74, 0.8), rgba(37, 183, 159, 0.8));
+  padding: 1rem 0;
+}
+.proj-heading h1 {
+  text-align: center;
+  /* color: #126f94; */
+  font-weight: 700;
+  margin: 3rem 0;
+  position:relative;
+  font-size: 9vw;
+  color:#25b79f;
+  -webkit-text-stroke: 0.3vw  #07374a;
+  text-transform: uppercase;
+}
+
+
+
+/* ////......Contact......///// */
+.contact {
+  background: #07374a;
+  position: relative;
+  height: 92vh;
+}
+.contact-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.contact-content h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #25b79f;
+  padding-bottom: 0.5rem;
+}
+.contact-content .mail {
+  color: #f0f0e6;
+  padding-bottom: 0.2rem;
+  font-size: 1rem;
+}
+.contact-content .links {
+  color: #25b79f;
+  padding: 0.5rem;
+  padding-bottom: 1.8rem;
+  font-size: 1rem;
+}
+.contact-content a {
+  text-decoration: none;
+  color: #25b79f;
+  padding: 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+.contact-content a:hover {
+  color: #f0f0e6;
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 60%;
+  }
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+  .skills {
+    width: 100%;
+  }
+  .skills-bar .bar .progress-line {
+    width: 100%;
+  }
+  .work-arrow {
+    display: none;
+  }
+  .right-content h1 {
+    margin-top: 3.2rem;
+  }
+  
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+  .contact-content {
+    width: 100%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+  .skills {
+    width: 100%;
+  }
+  .skills-bar .bar .progress-line {
+    width: 100%;
+  }
+  .work-arrow {
+    display: none;
+  }
+  .right-content h1 {
+    margin-top: 3.2rem;
+  }
+  
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+  .contact-content {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+  .skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .work-arrow {
+    display: none;
+  }
+  .left-content h1 {
+    margin-top: 3.2rem;
+    text-align: center;
+  }
+  .right-content h1 {
+    margin-top: 3.2rem;
+    text-align: center;
+  }
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+  .contact-content {
+    width: 100%;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    height: 90vmax;
+  }
+}
+a{
+  color: rgb(246, 242, 242);
+  font-size: 25px;
+  
+}
+a:hover{
+  color:#021b30 ;
+  
+}
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .slideshow-img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+    .details{
+        border: 4px solid #07374a;
+        border-radius: 1em;
+    }
+    input{
+	display: none;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.book{
+	display: flex;
+}
+#cover{
+	width: 00px;
+	height: 200px;
+}
+
+.slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slideshow-container .slideshow {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slideshow-container .slide {
+            min-width: 100%;
+        }
+        
+input{
+	display: none;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.book{
+	display: flex;
+}
+#cover{
+	width: 280px;
+	height: 450px;
+}
+.flip-book{
+	width: 280px;
+	height: 450px;
+	position: relative;
+	perspective: 1500px;
+}
+.flip{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-origin: left;
+	transform-style: preserve-3d;
+	transform: rotateY(0deg);
+	transition: .5s;
+	color: #000;
+}
+p{
+	font-size: 14px;
+	line-height: 24px;
+  color: #fff;
+}
+.front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color:#07374a;
+	box-sizing: border-box;
+	padding: 0 13px;
+	box-shadow: inset 20px 0 50px rgba(0,0,0,0.5) 0 2px 5px rgba(0,0,0,.5);
+}
+.back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+  border: 2px solid #5390a9;
+	background:#07374a;
+}
+.next-btn{
+	position: absolute;
+	bottom: 13px;
+	right: 13px;
+	cursor: pointer;
+	color: #000;
+}
+.back-btn{
+	position: absolute;
+	bottom: 13px;
+	right: 13px;
+	cursor: pointer;
+	color: #fff;
+}
+#p1{
+	z-index: 3;
+}
+#p2{
+	z-index: 2;
+}
+#p3{
+	z-index: 1;
+}
+#c1:checked ~ .flip-book #p1{
+	transform: rotateY(-180deg);
+	z-index: 1;
+}
+#c2:checked ~ .flip-book #p2{
+	transform: rotateY(-180deg);
+	z-index: 2;
+}
+#c3:checked ~ .flip-book #p3{
+	transform: rotateY(-180deg);
+	z-index: 3;
+}
+
+
+
+
+        
+        
+    
+  </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <div class="navbar-container container">
+            <div>
+              <h1 class="navbar-brand"></h1>
+            </div>
+            <ul class="menu-items">
+              <li><a href="#about">About</a></li>
+              <li><a href="#my-works">Projects</a></li>
+              <li><a href="#contact-me">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="home-content" id="home-page">
+          <div class="name">
+            <h1>TAZEEN AMIR</h1>
+            <p id="job-title">SOFTWARE ENGINEER</p>
+          </div>
+            
+          <div class="angle-down-icon">
+            <a href="#about"><i class="fas fa-angle-down"></i></a>
+          </div>
+        </div>
+      </header>
+      <section class="about-me" id="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="left-content">
+              <div>
+                <h1 class="about-heading" style="color:#07374a ;">About Me</h1>
+              </div>
+              <img src="PROFILE.jfif" alt="image" />
+              <p>
+                I am a student at NED University pursuing a Bachelor's degree in Software Engineering. I am highly self-motivated in my work and always ready to lend a hand. I consistently complete tasks punctually. My experience includes proficiency in languages such as HTML, CSS, C++, JavaScript, and Python. Additionally, I possess skills in Microsoft Word, PowerPoint, Excel, and Access. I have previously worked as a front-end developer
+              </p>
+              <br><a href="Tazeen Amir resume (2).pdf" download style="color:white;font-size: 18px;">DOWNLOAD RESUME</a>
+              <div class="work-arrow">
+                <p>
+                  <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+                </p>
+              </div>
+            </div>
+            <div class="skills">
+              <div class="right-content">
+                <div>
+                  <h1 class="skills-heading" style="color: #07374a; font-size: 40px;">My Skills</h1>
+                </div>
+                <div class="skills-bar">
+                  <div class="bar">
+                    <div class="info">
+                      <span>HTML</span>
+                    </div>
+                    <div class="progress-line"><span class="html"></span></div>
+                    <div class="bar">
+                      <div class="info">
+                        <span>CSS</span>
+                      </div>
+                      <div class="progress-line"><span class="css"></span></div>
+                      <div class="bar">
+                        <div class="info">
+                          <span>BOOTSTRAP</span>
+                        </div>
+                        <div class="progress-line"><span class="bootstrap"></span></div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>JAVASCRIPT</span>
+                          </div>
+                          <div class="progress-line"><span class="javascript"></span></div>
+                          <div class="bar">
+                            <div class="info">
+                              <span>C Programming</span>
+                            </div>
+                            <div class="progress-line"><span class="c"></span></div>
+                          </div>
+                        </div>
+                        <div class="bar">
+                          <div class="info">
+                            <span>Search engine optimization</span>
+                          </div>
+                          <div class="progress-line"><span class="SEO"></span></div>
+                        </div>
+                      </div>
+                      <div class="bar">
+                        <div class="info">
+                          <span>Object Oreinted Programming </span>
+                        </div>
+                        <div class="progress-line"><span class="OOP"></span></div>
+                      </div>
+                    </div>
+                    <div class="bar">
+                      <div class="info">
+                        <span>Python Programming</span>
+                      </div>
+                      <div class="progress-line"><span class="python"></span></div>
+                    </div>
+                  </div>
+                      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-arrow-2">
+                  <p>
+                    <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="my-works">
+        <div class="portfolio">
+          <div class="proj-heading">
+            <h1 style="font-size: 5rem;">PROJECTS</h1>
+          </div>
+            <div class="book" style="display: flex;
+          justify-content: center;
+          align-items: center;">
+            <input type="checkbox" id="c1">
+            <input type="checkbox" id="c2">
+            <input type="checkbox" id="c3">
+            <div id="cover"><img src="wthg.jpg"></div>
+            <div class="flip-book">
+            <div class="flip" id="p1">
+            <div class="back">
+            <img src="bgt.jpg">
+            <label class="back-btn" for="c1" style="font-size: 19px; color: #000;" >Back</label>
+            </div>
+            <div class="front">
+            <h2 style="color: #fff; font-size: 22px; padding: 25px;">WEATHER APP</h2>
+            <p style="font-size: 18px; padding: 18px;">The Weather Forecast App is a web application that provides users with real-time weather information and forecasts for their desired locations. The app uses API to retrieve weather data and present it in a user-friendly interface.<br><button style="margin-top: 17px;"><a href="https://tazeenamir.github.io/weather/" target="blank" style="color: #f8f4f4; background-color:#07374a; font-size: 18px;">View website<i
+              class="fas fa-external-link-alt"></i></a></p>
+            <label class="next-btn" for="c1" style="font-size: 19px; ">Next</label>
+              </div>
+            </div>
+            
+            <div class="flip" id="p2">
+            <div class="back">
+            <img src="jh.jpg">
+            <label class="back-btn" for="c2" style="font-size: 19px; color: #000;">Back</label>
+            </div>
+            <div class="front">
+            <h2 style="color: #fff; font-size: 22px; padding: 25px;">BUDGET CALCULATOR</h2>
+            <p style="font-size: 19px; padding: 12px;">Simplify budgeting: Input starting balance, categorize expenses into 3 groups (e.g., bills, groceries, entertainment), and click "Calculate." Get instant insights on expenses, averages, and financial status.<br><button style="margin-top: 17px;"><a href="https://tazeenamir.github.io/budget/" target="blank" style="color: #f8f4f4; background-color:#07374a; font-size: 18px;">View source<i
+              class="fas fa-external-link-alt"></i></a></p>
+            <label class="next-btn" for="c2"style="font-size: 19px;" >Next</label>
+              </div>
+            </div>
+            
+            
+            
+            <div class="flip" id="p3">
+            <div class="back">
+            <label class="back-btn" for="c3"style="font-size: 19px;">Back</label>
+            </div>
+            <div class="front">
+            <h2 style="color: #fff; font-size: 22px; padding: 25px;">TALKING DICTIONARY</h2>
+            <p style="font-size: 19px; padding: 12px;">Discover Python Talking Dictionary, an open-source language learning app built with Python and GUI libraries. Explore word definitions, and effortlessly expand your vocabulary by listening to audio pronunciations.<button style="margin-top: 17px;"><a href="https://github.com/Tazeenamir/talking-dictionary" target="blank" style="color: #f8f4f4; background-color:#07374a; font-size: 18px;">View source<i
+              class="fas fa-external-link-alt"></i></a></p>
+            <label class="next-btn" for="c3" style="font-size: 19px;">Next</label>
+            </div>
+            
+            </div>
+            </div>
+            </div>
+          </div>
+         
+                
+        </div>
+      </section>
+      
+
+      
+  <div class="contact" id="contact-me">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Contact Me</h2>
+        <p class="mail">
+          Get in touch with me <i class="fas fa-arrow-right"></i> tazeen75@icloud.com
+        </p>
+        <p class="links">Or find me on:</p>
+        <a href="https://www.linkedin.com/in/tazeen-amir-092812252" target="blank"><i class="fab fa-linkedin">
+            Linkedin</i></a>
+        <a href="https://github.com/Tazeenamir" target="blank"><i class="fab fa-github"></i> Github</a>
+        <a href="https://www.instagram.com/__tazeenamir__/" target="blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+          </div>
+         
+                
+        </div>
+      </section>
+      
+
+      
+ 
+  
+
+  <script>
+    const jobTitles = ["SOFTWARE ENGINEER", "FRONT END WEB DEVELOPER"]; 
+    let currentIndex = 0;
+  
+    function updateJobTitle() {
+      document.getElementById("job-title").textContent = jobTitles[currentIndex];
+      currentIndex = (currentIndex + 1) % jobTitles.length;
+    }
+  
+    setInterval(updateJobTitle, 2000); 
+    updateJobTitle();
+
+  </script>
+  
+</body>
+</html>
