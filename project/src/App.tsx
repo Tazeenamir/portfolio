@@ -1032,38 +1032,6 @@ const Portfolio = () => {
                   </div>
                 ))}
               </div>
-              <div className={`social-connect ${contactInView ? "fade-in-up" : ""}`} style={{ animationDelay: "0.5s" }}>
-                <h4>Connect With Me</h4>
-                <div className="social-links">
-                  <a
-                    href="https://github.com/tazeenamir"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link github"
-                    aria-label="GitHub"
-                  >
-                    <Github className="social-icon" />
-                    <span>GitHub</span>
-                    <div className="link-glow"></div>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/tazeen-amir-092812252/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link linkedin"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="social-icon" />
-                    <span>LinkedIn</span>
-                    <div className="link-glow"></div>
-                  </a>
-                  <button className="social-link resume" onClick={handleResumeDownload} aria-label="Download Resume">
-                    <Download className="social-icon" />
-                    <span>Resume</span>
-                    <div className="link-glow"></div>
-                  </button>
-                </div>
-              </div>
             </div>
             <div className={`contact-form-container ${contactInView ? "slide-in-right" : ""}`}>
               <div className="form-header">
@@ -1123,6 +1091,7 @@ const Portfolio = () => {
                 </button>
               </form>
             </div>
+            
           </div>
         </div>
       </section>
@@ -1140,6 +1109,38 @@ const Portfolio = () => {
             <div className="footer-right">
               <p>&copy; 2024 Tazeen Amir. All rights reserved.</p>
             </div>
+            <div className={`social-connect ${contactInView ? "fade-in-up" : ""}`} style={{ animationDelay: "0.5s" }}>
+                {/* <h4>Connect With Me</h4> */}
+                <div className="social-links">
+                  <a
+                    href="https://github.com/tazeenamir"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link github"
+                    aria-label="GitHub"
+                  >
+                    <Github className="social-icon" />
+                    <span>GitHub</span>
+                    <div className="link-glow"></div>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/tazeen-amir-092812252/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link linkedin"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="social-icon" />
+                    <span>LinkedIn</span>
+                    <div className="link-glow"></div>
+                  </a>
+                  <button className="social-link resume" onClick={handleResumeDownload} aria-label="Download Resume">
+                    <Download className="social-icon" />
+                    <span>Resume</span>
+                    <div className="link-glow"></div>
+                  </button>
+                </div>
+              </div>
           </div>
         </div>
       </footer>
