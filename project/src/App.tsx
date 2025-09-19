@@ -165,8 +165,8 @@ const Portfolio = () => {
 
   const handleResumeDownload = () => {
   const link = document.createElement("a")
-  link.href = "/Tazeen_Amir CV.pdf"
-  link.download = "Tazeen_Amir CV.pdf"
+  link.href = "/Tazeen SE.pdf"
+  link.download = "Tazeen SE.pdf"
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
@@ -183,7 +183,7 @@ const Portfolio = () => {
     const message = formData.get("message") as string
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
