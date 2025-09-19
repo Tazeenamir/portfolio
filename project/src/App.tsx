@@ -4,7 +4,10 @@ import { useState, useEffect, useRef } from "react"
 import type React from "react"
 import {
   Code2,
-  Palette,
+  Code,
+  Component,
+  Flame,
+  // Palette,
   Smartphone,
   Database,
   Globe,
@@ -24,7 +27,7 @@ import {
   Star,
   Zap,
   Cpu,
-  Layers,
+  // Layers,
   Sparkles,
   Award,
   Users,
@@ -32,8 +35,16 @@ import {
   Heart,
   CheckCircle,
   AlertCircle,
+  Brain,
+  Search,
+  MessageSquare,
+  Link,
+  Monitor,
+  Tablet,
+  GitBranch,
 } from "lucide-react"
 
+import { FileCode, Layers, Palette, Server, Cloud, Container, Settings, Bot, Network, BookOpen, Workflow } from 'lucide-react';
 const useIntersectionObserver = (options = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -107,9 +118,9 @@ const Portfolio = () => {
   const [projectsRef, projectsInView] = useIntersectionObserver()
   const [contactRef, contactInView] = useIntersectionObserver()
   const [statsRef, statsInView] = useIntersectionObserver()
-  const projectsCount = useCounter(50, 2000, statsInView)
-  const clientsCount = useCounter(30, 2000, statsInView)
-  const yearsCount = useCounter(5, 2000, statsInView)
+  const projectsCount = useCounter(15, 2000, statsInView)
+  const clientsCount = useCounter(15, 2000, statsInView)
+  const yearsCount = useCounter(2, 2000, statsInView)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2500)
@@ -153,13 +164,14 @@ const Portfolio = () => {
   }
 
   const handleResumeDownload = () => {
-    const link = document.createElement("a")
-    link.href = "/placeholder.svg?height=800&width=600"
-    link.download = "Tazeen_Amir_Resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+  const link = document.createElement("a")
+  link.href = "/Tazeen_Amir CV.pdf"
+  link.download = "Tazeen_Amir CV.pdf"
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -343,7 +355,7 @@ const Portfolio = () => {
               >
                 <div className="card-content">
                   <Smartphone className="card-icon" />
-                  <span>Mobile Developer</span>
+                  <span>AI Engineer</span>
                 </div>
               </div>
             </div>
@@ -388,7 +400,7 @@ const Portfolio = () => {
                       <div className="avatar-placeholder">
                         <div
   style={{
-    width: '40vw',              // Scales with viewport width
+    width: '300vw',              // Scales with viewport width
     maxWidth: '200px',          // Limits max size
     aspectRatio: '1 / 1',       // Keeps it a perfect circle
     borderRadius: '50%',
@@ -420,14 +432,14 @@ const Portfolio = () => {
                         style={{ animationDelay: "0.5s" }}
                       >
                         <Award className="badge-icon" />
-                        <span>5+ Years</span>
+                        <span>2+ Years</span>
                       </div>
                       <div
                         className={`badge badge-2 ${aboutInView ? "float-in" : ""}`}
                         style={{ animationDelay: "0.7s" }}
                       >
                         <Users className="badge-icon" />
-                        <span>50+ Projects</span>
+                        <span>15+ Projects</span>
                       </div>
                       <div
                         className={`badge badge-3 ${aboutInView ? "float-in" : ""}`}
@@ -483,9 +495,7 @@ const Portfolio = () => {
                     <h3>Technical Excellence</h3>
                   </div>
                   <p>
-                    I'm a passionate software engineer with 5+ years of experience crafting digital solutions that make
-                    a real impact. My expertise spans full-stack development, with deep knowledge of modern frameworks
-                    and cutting-edge technologies.
+                   I’m a final-year Software Engineering student at NED University with hands-on experience in full-stack development using React.js, Next.js, TypeScript, Node.js, and Express.js. I also work with AI agents using LangChain, combining solid development practices with emerging technologies to build scalable and efficient solutions.
                   </p>
                 </div>
                 <div
@@ -499,9 +509,9 @@ const Portfolio = () => {
                     <h3>Creative Innovation</h3>
                   </div>
                   <p>
-                    My approach combines technical precision with creative thinking. I believe in writing clean,
-                    maintainable code while delivering exceptional user experiences that exceed expectations and drive
-                    business growth.
+                    I blend technical skills with creative thinking to build responsive, user-focused interfaces and intelligent features. From clean UI design to AI-powered interactions, I strive to create digital products that are both functional and future-ready.
+
+
                   </p>
                 </div>
                 <div
@@ -515,9 +525,9 @@ const Portfolio = () => {
                     <h3>Global Impact</h3>
                   </div>
                   <p>
-                    From startups to enterprise solutions, I've helped businesses across the globe transform their
-                    digital presence. Every project is an opportunity to push boundaries and create something
-                    extraordinary.
+                    I’ve contributed to diverse client projects with real-world impact, developing solutions that are scalable, collaborative, and globally relevant. My ability to adapt and learn quickly helps me deliver meaningful results across industries and platforms.
+
+
                   </p>
                 </div>
               </div>
@@ -556,32 +566,36 @@ const Portfolio = () => {
                   <Briefcase className="logo-icon" />
                 </div>
                 <div className="job-badge current">Current</div>
-              </div>
-              <div className="job-details">
-                <h3 className="job-title">Senior Software Engineer</h3>
-                <div className="company-name">TechCorp Inc.</div>
-                <div className="job-period">2022 - Present</div>
-              </div>
-              <div className="job-highlights">
-                <div className="highlight-item">
-                  <Star className="highlight-icon" />
-                  <span>Led team of 5 developers</span>
-                </div>
-                <div className="highlight-item">
-                  <Zap className="highlight-icon" />
-                  <span>40% performance improvement</span>
-                </div>
-                <div className="highlight-item">
-                  <Award className="highlight-icon" />
-                  <span>Microservices architecture</span>
-                </div>
-              </div>
-              <div className="tech-stack-mini">
-                <span className="tech-pill">React</span>
-                <span className="tech-pill">Node.js</span>
-                <span className="tech-pill">AWS</span>
-                <span className="tech-pill">Docker</span>
-              </div>
+</div>
+<div className="job-details">
+  <h3 className="job-title">Workflow Automation Engineer</h3>
+  <div className="company-name">Mavikk</div>
+  <div className="job-period">July 2025 - Present | Remote</div>
+</div>
+
+<div className="job-highlights">
+  <div className="highlight-item">
+    <Star className="highlight-icon" />
+    <span>Built intelligent automation workflows in n8n</span>
+  </div>
+  <div className="highlight-item">
+    <Zap className="highlight-icon" />
+    <span>Integrated APIs, Airtable, databases & third-party services</span>
+  </div>
+  <div className="highlight-item">
+    <Award className="highlight-icon" />
+    <span>Streamlined processes & reduced manual effort</span>
+  </div>
+</div>
+
+<div className="tech-stack-mini">
+  <span className="tech-pill">n8n</span>
+  <span className="tech-pill">Airtable</span>
+  <span className="tech-pill">API Integration</span>
+  <span className="tech-pill">Workflow Automation</span>
+  <span className="tech-pill">Databases</span>
+</div>
+
             </div>
             <div
               className={`experience-card ${experienceInView ? "slide-in-up" : ""}`}
@@ -594,30 +608,31 @@ const Portfolio = () => {
                 <div className="job-badge">Previous</div>
               </div>
               <div className="job-details">
-                <h3 className="job-title">Full Stack Developer</h3>
-                <div className="company-name">StartupXYZ</div>
-                <div className="job-period">2020 - 2022</div>
-              </div>
+  <h3 className="job-title">Web Developer Intern</h3>
+  <div className="company-name">Acom Corp</div>
+  <div className="job-period">April 2025 – June 2025 | Karachi, Pakistan</div>
+</div>
               <div className="job-highlights">
-                <div className="highlight-item">
-                  <Users className="highlight-icon" />
-                  <span>100K+ daily users</span>
-                </div>
-                <div className="highlight-item">
-                  <CheckCircle className="highlight-icon" />
-                  <span>15+ client projects</span>
-                </div>
-                <div className="highlight-item">
-                  <Cpu className="highlight-icon" />
-                  <span>50% performance boost</span>
-                </div>
-              </div>
+  <div className="highlight-item">
+    <Star className="highlight-icon" />
+    <span>Built full-stack web features using React, Next.js, and MySQL</span>
+  </div>
+  <div className="highlight-item">
+    <Zap className="highlight-icon" />
+    <span>Ensured efficient data flow and smooth user interactions</span>
+  </div>
+  <div className="highlight-item">
+    <Award className="highlight-icon" />
+    <span>Developed scalable backend APIs with Node.js & Express</span>
+  </div>
+</div>
               <div className="tech-stack-mini">
-                <span className="tech-pill">Vue.js</span>
-                <span className="tech-pill">Python</span>
-                <span className="tech-pill">PostgreSQL</span>
-                <span className="tech-pill">GraphQL</span>
-              </div>
+  <span className="tech-pill">React</span>
+  <span className="tech-pill">Next.js</span>
+  <span className="tech-pill">Node.js</span>
+  <span className="tech-pill">Express</span>
+  <span className="tech-pill">MySQL</span>
+</div>
             </div>
             <div
               className={`experience-card ${experienceInView ? "slide-in-up" : ""}`}
@@ -630,223 +645,424 @@ const Portfolio = () => {
                 <div className="job-badge">Early Career</div>
               </div>
               <div className="job-details">
-                <h3 className="job-title">Mobile App Developer</h3>
-                <div className="company-name">MobileFirst Agency</div>
-                <div className="job-period">2019 - 2020</div>
-              </div>
+  <h3 className="job-title">Web Developer Intern</h3>
+  <div className="company-name">Quality Enhancement Cell (QEC) – NED</div>
+  <div className="job-period">Feb 2024 – Jun 2024 | Karachi, Pakistan</div>
+</div>
               <div className="job-highlights">
-                <div className="highlight-item">
-                  <Star className="highlight-icon" />
-                  <span>4.8+ App Store ratings</span>
-                </div>
-                <div className="highlight-item">
-                  <Smartphone className="highlight-icon" />
-                  <span>8 mobile apps delivered</span>
-                </div>
-                <div className="highlight-item">
-                  <Zap className="highlight-icon" />
-                  <span>85% crash rate reduction</span>
-                </div>
-              </div>
-              <div className="tech-stack-mini">
-                <span className="tech-pill">React Native</span>
-                <span className="tech-pill">TypeScript</span>
-                <span className="tech-pill">Firebase</span>
-              </div>
+  <div className="highlight-item">
+    <Star className="highlight-icon" />
+    <span>Collaborated with team on QEC portal project using Node.js & Express.js</span>
+  </div>
+  <div className="highlight-item">
+    <Zap className="highlight-icon" />
+    <span>Created automated workflows to replace manual processes</span>
+  </div>
+  <div className="highlight-item">
+    <Award className="highlight-icon" />
+    <span>Enhanced accuracy and efficiency in internal operations</span>
+  </div>
+</div>
+            <div className="tech-stack-mini">
+              <span className="tech-pill">React.js</span>
+  <span className="tech-pill">Node.js</span>
+  <span className="tech-pill">Express.js</span>
+  <span className="tech-pill">Workflow Automation</span>
+  <span className="tech-pill">Team Collaboration</span>
+</div>
             </div>
           </div>
         </div>
       </section>
-      <section id="skills" className="skills" ref={skillsRef}>
-        <div className="skills-bg-effects">
-          <div className="tech-grid">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className={`tech-node node-${(i % 4) + 1} ${skillsInView ? "animate-in" : ""}`}
-                style={{
-                  left: `${5 + i * 4.5}%`,
-                  top: `${10 + (i % 5) * 15}%`,
-                  animationDelay: `${i * 0.1}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="container">
-          <div className={`section-header ${skillsInView ? "fade-in-up" : ""}`}>
-            <div className="section-badge">
-              <Cpu className="badge-icon" />
-              <span>Skills & Expertise</span>
-            </div>
-            <h2 className="section-title">Technologies I Master</h2>
-            <p className="section-subtitle">A comprehensive toolkit for building exceptional digital experiences</p>
-          </div>
-          <div className="skills-showcase">
-            <div
-              className={`skill-category-3d frontend ${skillsInView ? "slide-in-left" : ""}`}
-              style={{ animationDelay: "0.1s" }}
-            >
-              <div className="category-header">
-                <div className="category-icon-container">
-                  <Code2 className="category-icon" />
-                  <div className="icon-glow"></div>
-                </div>
-                <div className="category-info">
-                  <h3>Frontend Development</h3>
-                  <p>Creating beautiful, responsive user interfaces</p>
-                </div>
-              </div>
-              <div className="skills-grid-3d">
-                {[
-                  { name: "React", icon: "⚛️", level: "expert" },
-                  { name: "TypeScript", icon: "📘", level: "expert" },
-                  { name: "Tailwind CSS", icon: "🎨", level: "advanced" },
-                  { name: "Next.js", icon: "⚡", level: "advanced" },
-                ].map((skill, index) => (
-                  <div
-                    key={skill.name}
-                    className={`skill-card ${skill.level} ${skillsInView ? "scale-in" : ""}`}
-                    style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-                  >
-                    <div className="skill-icon">{skill.icon}</div>
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <div className="skill-level">
-                        <div className={`level-bar ${skill.level}`}></div>
-                        <span className="level-text">{skill.level.charAt(0).toUpperCase() + skill.level.slice(1)}</span>
-                      </div>
-                    </div>
-                    <div className="skill-glow"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              className={`skill-category-3d backend ${skillsInView ? "slide-in-right" : ""}`}
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="category-header">
-                <div className="category-icon-container">
-                  <Database className="category-icon" />
-                  <div className="icon-glow"></div>
-                </div>
-                <div className="category-info">
-                  <h3>Backend Development</h3>
-                  <p>Building robust, scalable server solutions</p>
-                </div>
-              </div>
-              <div className="skills-grid-3d">
-                {[
-                  { name: "Node.js", icon: "🟢", level: "expert" },
-                  { name: "Python", icon: "🐍", level: "advanced" },
-                  { name: "PostgreSQL", icon: "🗄️", level: "advanced" },
-                  { name: "Firebase", icon: "🔥", level: "intermediate" },
-                ].map((skill, index) => (
-                  <div
-                    key={skill.name}
-                    className={`skill-card ${skill.level} ${skillsInView ? "scale-in" : ""}`}
-                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-                  >
-                    <div className="skill-icon">{skill.icon}</div>
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <div className="skill-level">
-                        <div className={`level-bar ${skill.level}`}></div>
-                        <span className="level-text">{skill.level.charAt(0).toUpperCase() + skill.level.slice(1)}</span>
-                      </div>
-                    </div>
-                    <div className="skill-glow"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              className={`skill-category-3d mobile ${skillsInView ? "slide-in-left" : ""}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="category-header">
-                <div className="category-icon-container">
-                  <Smartphone className="category-icon" />
-                  <div className="icon-glow"></div>
-                </div>
-                <div className="category-info">
-                  <h3>Mobile Development</h3>
-                  <p>Cross-platform mobile applications</p>
-                </div>
-              </div>
-              <div className="skills-grid-3d">
-                {[
-                  { name: "React Native", icon: "📱", level: "expert" },
-                  { name: "Android", icon: "🤖", level: "intermediate" },
-                  { name: "iOS", icon: "🍎", level: "intermediate" },
-                  { name: "Flutter", icon: "🎯", level: "beginner" },
-                ].map((skill, index) => (
-                  <div
-                    key={skill.name}
-                    className={`skill-card ${skill.level} ${skillsInView ? "scale-in" : ""}`}
-                    style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-                  >
-                    <div className="skill-icon">{skill.icon}</div>
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <div className="skill-level">
-                        <div className={`level-bar ${skill.level}`}></div>
-                        <span className="level-text">
-                          {skill.level === "beginner"
-                            ? "Learning"
-                            : skill.level.charAt(0).toUpperCase() + skill.level.slice(1)}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="skill-glow"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              className={`skill-category-3d devops ${skillsInView ? "slide-in-right" : ""}`}
-              style={{ animationDelay: "0.4s" }}
-            >
-              <div className="category-header">
-                <div className="category-icon-container">
-                  <Globe className="category-icon" />
-                  <div className="icon-glow"></div>
-                </div>
-                <div className="category-info">
-                  <h3>DevOps & Cloud</h3>
-                  <p>Deployment and infrastructure management</p>
-                </div>
-              </div>
-              <div className="skills-grid-3d">
-                {[
-                  { name: "AWS", icon: "☁️", level: "advanced" },
-                  { name: "Docker", icon: "🐳", level: "advanced" },
-                  { name: "Kubernetes", icon: "⚙️", level: "intermediate" },
-                  { name: "CI/CD", icon: "🔄", level: "advanced" },
-                ].map((skill, index) => (
-                  <div
-                    key={skill.name}
-                    className={`skill-card ${skill.level} ${skillsInView ? "scale-in" : ""}`}
-                    style={{ animationDelay: `${0.5 + index * 0.1}s` }}
-                  >
-                    <div className="skill-icon">{skill.icon}</div>
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <div className="skill-level">
-                        <div className={`level-bar ${skill.level}`}></div>
-                        <span className="level-text">{skill.level.charAt(0).toUpperCase() + skill.level.slice(1)}</span>
-                      </div>
-                    </div>
-                    <div className="skill-glow"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* i?mport { Code2?, FileCode, Palette, Component, Layers, Zap, Database, Server, Code, Globe, Flame, Brain, Link, Search, Settings, MessageSquare, Cpu, Smartphone, Monitor, Tablet, Cloud, Container, GitBranch } from 'lucide-react'; */}
 
+<section id="skills" className="skills" ref={skillsRef}>
+  <div className="skills-bg-effects">
+    <div className="tech-grid">
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className={`tech-node node-${(i % 4) + 1} ${skillsInView ? "animate-in" : ""}`}
+          style={{
+            left: `${5 + i * 4.5}%`,
+            top: `${10 + (i % 5) * 15}%`,
+            animationDelay: `${i * 0.1}s`,
+          }}
+        />
+      ))}
+    </div>
+  </div>
+  <div className="container">
+    <div className={`section-header ${skillsInView ? "fade-in-up" : ""}`}>
+      <div className="section-badge">
+        <Cpu className="badge-icon" />
+        <span>Skills & Expertise</span>
+      </div>
+      <h2 className="section-title">Technologies I Master</h2>
+      <p className="section-subtitle">A comprehensive toolkit for building exceptional digital experiences</p>
+    </div>
+    <div className="skills-showcase">
+      {/* Frontend Development */}
+      <div
+        className={`skill-category-3d frontend ${skillsInView ? "slide-in-left" : ""}`}
+        style={{ animationDelay: "0.1s" }}
+      >
+        <div className="category-header">
+          <div className="category-icon-container">
+            <Code2 className="category-icon" />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="category-info">
+            <h3>Frontend Development</h3>
+            <p>Creating beautiful, responsive user interfaces</p>
+          </div>
+        </div>
+        <div className="skills-grid-3d">
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.2s" }}>
+            <div className="skill-icon"><Code2 className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">React</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.3s" }}>
+            <div className="skill-icon"><FileCode className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">TypeScript</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.4s" }}>
+            <div className="skill-icon"><Palette className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Tailwind CSS</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.5s" }}>
+            <div className="skill-icon"><Component className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Shadcn</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.6s" }}>
+            <div className="skill-icon"><Layers className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Mui</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.7s" }}>
+            <div className="skill-icon"><Zap className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Next.js</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Backend Development */}
+      <div
+        className={`skill-category-3d backend ${skillsInView ? "slide-in-right" : ""}`}
+        style={{ animationDelay: "0.2s" }}
+      >
+        <div className="category-header">
+          <div className="category-icon-container">
+            <Database className="category-icon" />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="category-info">
+            <h3>Backend Development</h3>
+            <p>Building robust, scalable server solutions</p>
+          </div>
+        </div>
+        <div className="skills-grid-3d">
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.3s" }}>
+            <div className="skill-icon"><Server className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Node.js</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.4s" }}>
+            <div className="skill-icon"><Code className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Python</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.5s" }}>
+            <div className="skill-icon"><Globe className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Express.js</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card intermediate ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.6s" }}>
+            <div className="skill-icon"><Flame className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Firebase</span>
+              <div className="skill-level">
+                <div className="level-bar intermediate"></div>
+                <span className="level-text">Intermediate</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* AI & Machine Learning */}
+      <div
+        className={`skill-category-3d ai ${skillsInView ? "slide-in-left" : ""}`}
+        style={{ animationDelay: "0.3s" }}
+      >
+        <div className="category-header">
+          <div className="category-icon-container">
+            <Brain className="category-icon" />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="category-info">
+            <h3>AI & Machine Learning</h3>
+            <p>Intelligent systems and language models</p>
+          </div>
+        </div>
+        <div className="skills-grid-3d">
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.4s" }}>
+            <div className="skill-icon"><Link className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">LangChain</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.5s" }}>
+            <div className="skill-icon"><Search className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">RAG Systems</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card intermediate ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.6s" }}>
+            <div className="skill-icon"><Settings className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Fine-tuning</span>
+              <div className="skill-level">
+                <div className="level-bar intermediate"></div>
+                <span className="level-text">Intermediate</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.7s" }}>
+            <div className="skill-icon"><MessageSquare className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">LLM Integration</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.8s" }}>
+            <div className="skill-icon"><Cpu className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">OpenAI API</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.9s" }}>
+            <div className="skill-icon"><Database className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">N8N</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Development */}
+      <div
+        className={`skill-category-3d mobile ${skillsInView ? "slide-in-right" : ""}`}
+        style={{ animationDelay: "0.4s" }}
+      >
+        <div className="category-header">
+          <div className="category-icon-container">
+            <Smartphone className="category-icon" />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="category-info">
+            <h3>Mobile Development</h3>
+            <p>Cross-platform mobile applications</p>
+          </div>
+        </div>
+        <div className="skills-grid-3d">
+          <div className={`skill-card expert ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.5s" }}>
+            <div className="skill-icon"><Smartphone className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">React Native</span>
+              <div className="skill-level">
+                <div className="level-bar expert"></div>
+                <span className="level-text">Expert</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card intermediate ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.6s" }}>
+            <div className="skill-icon"><Monitor className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Android</span>
+              <div className="skill-level">
+                <div className="level-bar intermediate"></div>
+                <span className="level-text">Intermediate</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card intermediate ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.7s" }}>
+            <div className="skill-icon"><Tablet className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">iOS</span>
+              <div className="skill-level">
+                <div className="level-bar intermediate"></div>
+                <span className="level-text">Intermediate</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card beginner ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.8s" }}>
+            <div className="skill-icon"><Layers className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Flutter</span>
+              <div className="skill-level">
+                <div className="level-bar beginner"></div>
+                <span className="level-text">Learning</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* DevOps & Cloud */}
+      {/* <div
+        className={`skill-category-3d devops ${skillsInView ? "slide-in-left" : ""}`}
+        style={{ animationDelay: "0.5s" }}
+      >
+        <div className="category-header">
+          <div className="category-icon-container">
+            <Globe className="category-icon" />
+            <div className="icon-glow"></div>
+          </div>
+          <div className="category-info">
+            <h3>DevOps & Cloud</h3>
+            <p>Deployment and infrastructure management</p>
+          </div>
+        </div>
+        <div className="skills-grid-3d">
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.6s" }}>
+            <div className="skill-icon"><Cloud className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">AWS</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.7s" }}>
+            <div className="skill-icon"><Container className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Docker</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card intermediate ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.8s" }}>
+            <div className="skill-icon"><Settings className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">Kubernetes</span>
+              <div className="skill-level">
+                <div className="level-bar intermediate"></div>
+                <span className="level-text">Intermediate</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+          <div className={`skill-card advanced ${skillsInView ? "scale-in" : ""}`} style={{ animationDelay: "0.9s" }}>
+            <div className="skill-icon"><GitBranch className="w-6 h-6" /></div>
+            <div className="skill-info">
+              <span className="skill-name">CI/CD</span>
+              <div className="skill-level">
+                <div className="level-bar advanced"></div>
+                <span className="level-text">Advanced</span>
+              </div>
+            </div>
+            <div className="skill-glow"></div>
+          </div>
+        </div>
+      </div> */}
+    </div>
+  </div>
+</section>
       {/* Enhanced Projects Section */}
       <section id="projects" className="projects" ref={projectsRef}>
         <div className="container">
@@ -857,31 +1073,31 @@ const Portfolio = () => {
           <div className="projects-grid">
             {[
               {
-                title: "E-commerce Platform",
+                title: "Elevate360",
                 description:
-                  "Full-stack e-commerce solution with real-time inventory management and payment processing.",
-                tech: ["React", "Node.js", "MongoDB", "Stripe"],
-                image: "/placeholder.svg?height=200&width=350",
+                  "Elevate360 is an AI-powered platform that automates the entire SDLC, team management, and project payments via PayFast — boosting productivity, transparency, and efficiency.",
+                tech: ["React", "Node.js", "MySQL","Express.js","MistralAI", "PayFast"],
+                image: "/elevate.png",
                 liveUrl: "https://ecommerce-demo.example.com",
-                githubUrl: "https://github.com/tazeenamir/ecommerce-platform",
+                githubUrl: "https://github.com/ErajT/Elevate360/tree/tazeen",
               },
               {
-                title: "Task Management App",
+                title: "Deliberative",
                 description:
-                  "Collaborative project management tool with real-time updates and team collaboration features.",
-                tech: ["Vue.js", "Socket.io", "PostgreSQL", "Redis"],
-                image: "/placeholder.svg?height=200&width=350",
-                liveUrl: "https://taskmanager-demo.example.com",
-                githubUrl: "https://github.com/tazeenamir/task-management-app",
+                  "Deliberative is a training management system that assesses how well trainees apply learned concepts in real life. Based on their implementation scores, a leaderboard is generated to measure training effectiveness.",
+                tech: ["React.js", "MySQL", "Node.js","Express.js"],
+                image: "/delib.png",
+                liveUrl: "hhttps://deliberatives.com/",
+                githubUrl: "https://github.com/ErajT/learn/tree/tazeen",
               },
               {
-                title: "Mobile Banking App",
+                title: "Learn Flow",
                 description:
-                  "Secure mobile banking application with biometric authentication and real-time transactions.",
-                tech: ["React Native", "TypeScript", "Firebase", "Biometrics"],
-                image: "/placeholder.svg?height=200&width=350",
-                liveUrl: "https://banking-app-demo.example.com",
-                githubUrl: "https://github.com/tazeenamir/mobile-banking-app",
+                  "Create collections, add notes, collaborate with peers, and generate flashcards. LearnFlow makes learning easier and more efficient than ever before.",
+                tech: ["React.js", "RAG", "Firebase", "Express.js","Node.js"],
+                image: "/learn1.png",
+                liveUrl: "https://learn-flow-delta.vercel.app/",
+                githubUrl: "https://github.com/ErajT/iba-hackathon/tree/tazeen",
               },
             ].map((project, index) => (
               <div
@@ -985,13 +1201,13 @@ const Portfolio = () => {
                   {
                     icon: Phone,
                     title: "Phone",
-                    value: "+1 (555) 123-4567",
+                    value: "+923366864869",
                     note: "Available Mon-Fri, 9AM-6PM PST",
                   },
                   {
                     icon: MapPin,
                     title: "Location",
-                    value: "San Francisco, CA",
+                    value: "Karachi, Pakistan",
                     note: "Open to remote collaboration",
                   },
                 ].map((method, index) => (
@@ -1027,7 +1243,7 @@ const Portfolio = () => {
                     <div className="link-glow"></div>
                   </a>
                   <a
-                    href="https://linkedin.com/in/tazeenamir"
+                    href="https://www.linkedin.com/in/tazeen-amir-092812252/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-link linkedin"
