@@ -724,7 +724,7 @@ const Portfolio = () => {
 
     {/* Skills Grid */}
     <div className="skills-showcase mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* === Frontend Development === */}
+      {/* === Frontend + Backend Development === */}
       <div
         className={`skill-category-3d ${
           skillsInView ? "slide-in-left" : ""
@@ -737,10 +737,10 @@ const Portfolio = () => {
           </div>
           <div>
             <h3 className="text-xl font-semibold text-white">
-              Frontend Development
+              Frontend + Backend Development
             </h3>
             <p className="text-gray-300 text-sm">
-              Creating beautiful, responsive user interfaces
+              Creating full-stack, scalable web applications
             </p>
           </div>
         </div>
@@ -748,11 +748,10 @@ const Portfolio = () => {
         <div className="skills-grid-3d grid grid-cols-2 sm:grid-cols-3 gap-4">
           {[
             { name: "React", icon: <Code2 />, level: "expert" },
-            { name: "TypeScript", icon: <FileCode />, level: "expert" },
-            { name: "Tailwind CSS", icon: <Palette />, level: "advanced" },
-            { name: "Shadcn", icon: <Component />, level: "advanced" },
-            { name: "Mui", icon: <Layers />, level: "advanced" },
             { name: "Next.js", icon: <Zap />, level: "advanced" },
+            { name: "Node.js", icon: <Cpu />, level: "expert" },
+            { name: "Express.js", icon: <Layers />, level: "expert" },
+            { name: "FastAPI", icon: <Database />, level: "advanced" },
           ].map((skill, index) => (
             <div
               key={skill.name}
@@ -1080,38 +1079,132 @@ const Portfolio = () => {
               </form>
             </div>
           </div>
-          <div className={`social-connect ${contactInView ? "fade-in-up" : ""}`} style={{ animationDelay: "0.5s" }}>
-                <h4>Connect With Me</h4>
-                <div className="social-links">
-                  <a
-                    href="https://github.com/tazeenamir"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link github"
-                    aria-label="GitHub"
-                  >
-                    <Github className="social-icon" />
-                    <span>GitHub</span>
-                    <div className="link-glow"></div>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/tazeen-amir-092812252/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link linkedin"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="social-icon" />
-                    <span>LinkedIn</span>
-                    <div className="link-glow"></div>
-                  </a>
-                  <button className="social-link resume" onClick={handleResumeDownload} aria-label="Download Resume">
-                    <Download className="social-icon" />
-                    <span>Resume</span>
-                    <div className="link-glow"></div>
-                  </button>
-                </div>
-              </div>
+          <div
+  className={`social-connect ${contactInView ? "fade-in-up" : ""}`}
+  style={{
+    animationDelay: "0.5s",
+    textAlign: "center",
+    marginTop: "2rem",
+    width: "100%",
+  }}
+>
+  <h4
+    style={{
+      color: "#fff",
+      marginBottom: "1rem",
+      fontSize: "1.25rem",
+      fontWeight: "600",
+    }}
+  >
+    Connect With Me
+  </h4>
+
+  <div
+    className="social-links"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "0.8rem",
+      flexWrap: "nowrap", // Force one row only
+      transform: "scale(1)", // Default scale
+    }}
+  >
+    {/* === GitHub === */}
+    <a
+      href="https://github.com/tazeenamir"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link github"
+      aria-label="GitHub"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.4rem",
+        background: "rgba(255, 255, 255, 0.05)",
+        padding: "0.5rem 0.9rem",
+        borderRadius: "8px",
+        fontSize: "0.95rem",
+        color: "#fff",
+        transition: "transform 0.2s ease, background 0.3s ease",
+        whiteSpace: "nowrap",
+        minWidth: "80px",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)")
+      }
+      onMouseLeave={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)")
+      }
+    >
+      <Github style={{ width: "18px", height: "18px" }} />
+      <span>GitHub</span>
+    </a>
+
+    {/* === LinkedIn === */}
+    <a
+      href="https://www.linkedin.com/in/tazeen-amir-092812252/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-link linkedin"
+      aria-label="LinkedIn"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.4rem",
+        background: "rgba(255, 255, 255, 0.05)",
+        padding: "0.5rem 0.9rem",
+        borderRadius: "8px",
+        fontSize: "0.95rem",
+        color: "#fff",
+        transition: "transform 0.2s ease, background 0.3s ease",
+        whiteSpace: "nowrap",
+        minWidth: "80px",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)")
+      }
+      onMouseLeave={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)")
+      }
+    >
+      <Linkedin style={{ width: "18px", height: "18px" }} />
+      <span>LinkedIn</span>
+    </a>
+
+    {/* === Resume Button === */}
+    <button
+      className="social-link resume"
+      onClick={handleResumeDownload}
+      aria-label="Download Resume"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.4rem",
+        background: "rgba(255, 255, 255, 0.05)",
+        padding: "0.5rem 0.9rem",
+        borderRadius: "8px",
+        fontSize: "0.95rem",
+        color: "#fff",
+        border: "none",
+        cursor: "pointer",
+        transition: "transform 0.2s ease, background 0.3s ease",
+        whiteSpace: "nowrap",
+        minWidth: "80px",
+      }}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)")
+      }
+      onMouseLeave={(e) =>
+        (e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)")
+      }
+    >
+      <Download style={{ width: "18px", height: "18px" }} />
+      <span>Resume</span>
+    </button>
+  </div>
+</div>
+
         </div>
         
       </section>
